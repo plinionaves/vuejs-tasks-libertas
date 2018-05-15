@@ -11,11 +11,11 @@ Projeto desenvolvido para a palestra na Libertas Faculdades Integradas (ELITE 20
 
 ### Aplicação
 
-- <a href="https://vuejs.org/" target="_blank">VueJS@2.x</a>
-- <a href="https://router.vuejs.org/en/" target="_blank">VueRouter@3.x</a>
+- <a href="https://vuejs.org/" target="_blank">VueJS 2.x</a>
+- <a href="https://router.vuejs.org/en/" target="_blank">VueRouter 3.x</a>
 - <a href="https://github.com/axios/axios" target="_blank">axios</a>
-- <a href="https://github.com/ionic-team/ionic" target="_blank">Ionic@4.x</a>
-- <a href="https://github.com/vuejs/vue-cli" target="_blank">VueCLI@3.x</a>
+- <a href="https://github.com/ionic-team/ionic" target="_blank">Ionic 4.x</a>
+- <a href="https://github.com/vuejs/vue-cli" target="_blank">VueCLI 3.x</a>
 
 ### API
 
