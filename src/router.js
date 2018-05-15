@@ -13,4 +13,7 @@ const routes = [
     { path: '/tarefas/salvar/:id', component: TarefaSalvar }
 ];
 
-export default new VueRouter({ routes });
+export default new VueRouter({ 
+    mode: 'history',
+    routes 
+});

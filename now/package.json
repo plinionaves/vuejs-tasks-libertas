@@ -1,0 +1,13 @@
+{
+    "name": "vuejs-tasks-dev",
+    "scripts": {
+        "start": "serve --single --cache=60000"
+    },
+    "dependencies": {
+        "serve": "*"
+    },
+    "now": {
+        "name": "vue-tasks-dev",
+        "alias": "vue-tasks-dev"
+    }
+}

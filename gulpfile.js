@@ -2,7 +2,7 @@ const gulp = require('gulp');
 
 gulp.task('now:config', () => {
     return gulp
-        .src(['artifacts/now.json'])
+        .src(['now/*'])
         .pipe(gulp.dest('dist/'));
 });
 
