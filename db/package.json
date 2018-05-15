@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "start": "json-server db.json --watch --port 3000"
+    },
+    "devDependencies": {
+        "json-server": "*"
+    },
+    "now": {
+        "name": "vue-tasks-api-dev",
+        "alias": "vue-tasks-api-dev"
+    }
+}
