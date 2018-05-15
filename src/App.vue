@@ -8,11 +8,9 @@
 ion-content {
   height: 500px;
 }
-
-.fixed-fab-button {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
+.spinner {
+  display: block;
+  margin: 25px auto 0 auto;
 }
 </style>
 

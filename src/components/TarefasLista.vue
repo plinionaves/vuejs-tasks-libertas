@@ -7,6 +7,11 @@
       </ion-header>
       <ion-content>
           <ion-list>
+            <ion-spinner 
+                class="spinner"
+                v-if="listaTarefas.length === 0" 
+                color="primary">
+            </ion-spinner>
             <tarefa-item
                 v-for="tarefa in listaTarefas"
                 :key="tarefa.id"
@@ -16,10 +21,12 @@
                 @deletarTarefa="deletarTarefa">
             </tarefa-item>
           </ion-list>
-          <ion-fab-button class="fixed-fab-button" @click="addTarefa">
-              <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
       </ion-content>
+      <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button @click="addTarefa">
+        <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
   </ion-page>
 </template>
 

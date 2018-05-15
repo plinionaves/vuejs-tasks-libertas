@@ -18,10 +18,12 @@
                     @keyup.enter="salvarTarefa">
                 </ion-input>
           </ion-item>
-          <ion-fab-button class="fixed-fab-button" @click="salvarTarefa">
-              <ion-icon name="checkmark"></ion-icon>
-          </ion-fab-button>
       </ion-content>
+      <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button @click="salvarTarefa">
+        <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
   </ion-page>
 </template>
 

@@ -6,19 +6,9 @@
       "concluido": true
     },
     {
-      "titulo": "Aprender Graph",
+      "titulo": "Aprender VueJS",
       "concluido": true,
-      "id": 4
-    },
-    {
-      "titulo": "Montar slides",
-      "concluido": true,
-      "id": 5
-    },
-    {
-      "titulo": "Aprender a lidar",
-      "concluido": true,
-      "id": 6
+      "id": 2
     }
   ]
 }
