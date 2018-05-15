@@ -3,12 +3,17 @@
     {
       "id": 1,
       "titulo": "Aprender JavaScript",
-      "concluido": true
+      "concluido": false
     },
     {
       "titulo": "Aprender VueJS",
-      "concluido": true,
+      "concluido": false,
       "id": 2
+    },
+    {
+      "titulo": "Aprender Ionic",
+      "concluido": false,
+      "id": 3
     }
   ]
 }
