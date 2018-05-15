@@ -6,7 +6,7 @@
           </ion-toolbar>
       </ion-header>
       <ion-content>
-          <ion-list>
+        <ion-list>
             <ion-spinner 
                 class="spinner"
                 v-if="listaTarefas.length === 0" 
@@ -20,7 +20,8 @@
                 @concluirTarefa="concluirTarefa"
                 @deletarTarefa="deletarTarefa">
             </tarefa-item>
-          </ion-list>
+        </ion-list>
+        <ion-toast-controller></ion-toast-controller>
       </ion-content>
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
         <ion-fab-button @click="addTarefa">
@@ -57,7 +58,12 @@ export default {
             this.$router.push({ path: '/tarefas/salvar' })
         },
         concluirTarefa(tarefa) {
-            axios.put(`${API_URL}/${tarefa.id}`, tarefa);
+            axios.put(`${API_URL}/${tarefa.id}`, tarefa)
+                .then(() => {
+                    if (tarefa.concluido) {
+                        this.mostrarToast(`Parabéns! Tarefa '${tarefa.titulo}' concluída!`)
+                    }
+                });
         },
         editarTarefa(tarefa) {
             this.$router.push({ path: `/tarefas/salvar/${tarefa.id}` });
@@ -68,8 +74,21 @@ export default {
                 axios.delete(`${API_URL}/${tarefa.id}`)
                     .then(() => {
                         this.tarefas = this.tarefas.filter(t => t.id !== tarefa.id);
+                        this.mostrarToast(`Tarefa '${tarefa.titulo}' deletada com sucesso!`);
                     });
             }
+        },
+        mostrarToast(mensagem) {
+            (async function () {
+                const toastController = document.querySelector('ion-toast-controller');
+                await toastController.componentOnReady()
+                
+                const toast = await toastController.create({
+                    message: mensagem,
+                    duration: 2000
+                });
+                toast.present();
+            })();
         }
     },
     mounted() {
