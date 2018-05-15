@@ -12,14 +12,13 @@
                 v-if="listaTarefas.length === 0" 
                 color="primary">
             </ion-spinner>
-            <tarefa-item
+            <TarefaItem
                 v-for="tarefa in listaTarefas"
                 :key="tarefa.id"
                 :tarefa="tarefa"
                 @editarTarefa="editarTarefa"
                 @concluirTarefa="concluirTarefa"
-                @deletarTarefa="deletarTarefa">
-            </tarefa-item>
+                @deletarTarefa="deletarTarefa"/>
         </ion-list>
         <ion-toast-controller></ion-toast-controller>
       </ion-content>
@@ -38,7 +37,7 @@ import { API_URL } from '../config';
 
 export default {
     components: {
-        'TarefaItem': TarefaItem
+        TarefaItem
     },
     data() {
         return {
