@@ -20,6 +20,7 @@
                 @concluirTarefa="concluirTarefa"
                 @deletarTarefa="deletarTarefa"/>
         </ion-list>
+        <ion-alert-controller></ion-alert-controller>
         <ion-toast-controller></ion-toast-controller>
       </ion-content>
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
@@ -68,14 +69,32 @@ export default {
             this.$router.push({ path: `/tarefas/salvar/${tarefa.id}` });
         },
         deletarTarefa(tarefa) {
-            const autorizadoDeletar = window.confirm(`Deseja realmente deletar a tarefa '${tarefa.titulo}'?`);
-            if (autorizadoDeletar) {
-                axios.delete(`${API_URL}/${tarefa.id}`)
-                    .then(() => {
-                        this.tarefas = this.tarefas.filter(t => t.id !== tarefa.id);
-                        this.mostrarToast(`Tarefa '${tarefa.titulo}' deletada com sucesso!`);
-                    });
-            }
+
+            const self = this;
+
+            (async function() {
+                const alertController = document.querySelector('ion-alert-controller');
+                await alertController.componentOnReady();
+
+                const alert = await alertController.create({
+                    message: `Deseja realmente deletar a tarefa '${tarefa.titulo}'?`,
+                    buttons: [
+                        {
+                            text: 'Sim',
+                            handler: () => {
+                                axios.delete(`${API_URL}/${tarefa.id}`)
+                                    .then(() => {
+                                        self.tarefas = self.tarefas.filter(t => t.id !== tarefa.id);
+                                        self.mostrarToast(`Tarefa '${tarefa.titulo}' deletada com sucesso!`);
+                                    });
+                            }
+                        },
+                        'Não'
+                    ]
+                });
+                alert.present();
+            })();
+
         },
         mostrarToast(mensagem) {
             (async function () {
