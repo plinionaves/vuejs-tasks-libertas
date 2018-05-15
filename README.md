@@ -1,6 +1,6 @@
 # VueJS Tasks
 
-Projeto desenvolvido para a palestra na Libertas Faculdades Integradas (ELITE 2018) no dia 16/05/2018
+Projeto desenvolvido para a palestra na Libertas Faculdades Integradas (ELITE 2018) no dia 17/05/2018
 
 ## Teste a aplicação
 
