@@ -24,8 +24,8 @@
         <ion-toast-controller></ion-toast-controller>
       </ion-content>
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button @click="addTarefa">
-        <ion-icon name="add"></ion-icon>
+        <ion-fab-button @click="addTarefa" color="danger">
+            <ion-icon name="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
   </ion-page>

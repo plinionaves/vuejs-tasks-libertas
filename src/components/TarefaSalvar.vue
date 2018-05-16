@@ -20,8 +20,8 @@
           </ion-item>
       </ion-content>
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button @click="salvarTarefa">
-        <ion-icon name="checkmark"></ion-icon>
+        <ion-fab-button @click="salvarTarefa" color="danger">
+            <ion-icon name="checkmark"></ion-icon>
         </ion-fab-button>
       </ion-fab>
   </ion-page>
