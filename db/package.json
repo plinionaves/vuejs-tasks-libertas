@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "start": "json-server db.json --watch --port 3000"
+        "start": "json-server db.json --watch --port 3000",
+        "deploy": "now --public && now alias"
     },
     "devDependencies": {
         "json-server": "*"
