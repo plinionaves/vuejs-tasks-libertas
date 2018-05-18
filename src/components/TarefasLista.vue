@@ -9,9 +9,14 @@
         <ion-list>
             <ion-spinner 
                 class="spinner"
-                v-if="listaTarefas.length === 0" 
+                v-if="estaCarregando" 
                 color="primary">
             </ion-spinner>
+            <ion-item 
+                lines="none"
+                v-if="!estaCarregando && listaTarefas.length === 0">
+                    Nenhuma tarefa cadastrada.
+            </ion-item>
             <TarefaItem
                 v-for="tarefa in listaTarefas"
                 :key="tarefa.id"
@@ -42,7 +47,8 @@ export default {
     },
     data() {
         return {
-            tarefas: []
+            tarefas: [],
+            estaCarregando: true
         }
     },
     computed: {
@@ -113,6 +119,7 @@ export default {
         axios.get(API_URL)
             .then(res => {
                 this.tarefas = res.data;
+                this.estaCarregando = false;
             });
     }
 }
